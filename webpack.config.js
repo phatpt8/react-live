@@ -8,6 +8,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 function getEntries(entries) {
     if (process.env.NODE_ENV === 'development') {
         return entries.concat([
+            // sourcePath + '/lib',
             'webpack-dev-server/client?http://localhost:8080',
             'webpack/hot/only-dev-server'
         ])
@@ -39,7 +40,7 @@ module.exports = {
             page: sourcePath + '/pages',
             components: sourcePath + '/components'
         },
-        extensions: ['.js', '.jsx', '.css', '.less', '.svg', '.html', '.ico']
+        extensions: ['.js', '.jsx', '.css', '.scss', '.svg', '.html', '.ico']
     },
     devtool: isDev ? 'eval-source-map' : 'source-map',
     module: {
@@ -53,7 +54,7 @@ module.exports = {
                 }
             }]
         }, {
-            test: /\.(sass|css)$/,
+            test: /\.(scss|css)$/,
             use: ExtractTextPlugin.extract({
                 fallback: 'style-loader',
                 loader: [
@@ -83,7 +84,7 @@ module.exports = {
                     mimetype: 'application/font-woff',
                     name: 'public/fonts/[name].[ext]',
                 }
-            }],
+            }], 
         }, {
             test: /\.[ot]tf$/,
             use: [{
