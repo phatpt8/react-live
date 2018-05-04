@@ -53,6 +53,7 @@ io.sockets.on('connection', function (socket){
                 }
           });
         }
+        // socket.emit('ipaddr', '127.0.0.1');
     });
 
 });

@@ -84,7 +84,7 @@ module.exports = {
                     mimetype: 'application/font-woff',
                     name: 'public/fonts/[name].[ext]',
                 }
-            }], 
+            }],
         }, {
             test: /\.[ot]tf$/,
             use: [{

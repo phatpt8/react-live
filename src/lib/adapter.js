@@ -4,7 +4,6 @@ var attachMediaStream = null;
 var reattachMediaStream = null;
 var webrtcDetectedBrowser = null;
 var webrtcDetectedVersion = null;
-var createIceServer = null;
 
 function trace(text) {
   // This function is used for logging.

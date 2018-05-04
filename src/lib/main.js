@@ -37,7 +37,7 @@ function initVideo() {
    ****************************************************************************/
 
   // Connect to the signaling server
-  var socket = io.connect('http://localhost:2013/');
+  var socket = io.connect('http://30.108.116.203:2013');
 
   socket.on('ipaddr', function (ipaddr) {
       console.log('Server IP address is: ' + ipaddr);
@@ -63,6 +63,7 @@ function initVideo() {
   });
 
   socket.on('ready', function () {
+    console.log('createPeerConnection(isInitiator, configuration);', isInitiator, configuration);
       createPeerConnection(isInitiator, configuration);
   })
 
@@ -170,7 +171,7 @@ function initVideo() {
               console.log('End of candidates.');
           }
       };
-
+console.log('isNitiator', isInitiator);
       if (isInitiator) {
           console.log('Creating Data Channel');
           dataChannel = peerConn.createDataChannel("photos");
