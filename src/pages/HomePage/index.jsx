@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './index.scss';
+import initVideo from 'src/lib/main.js';
 
 export default class HomePage extends Component {
 

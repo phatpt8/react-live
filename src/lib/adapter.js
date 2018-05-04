@@ -4,6 +4,7 @@ var attachMediaStream = null;
 var reattachMediaStream = null;
 var webrtcDetectedBrowser = null;
 var webrtcDetectedVersion = null;
+var createIceServer = null;
 
 function trace(text) {
   // This function is used for logging.
@@ -151,4 +152,14 @@ if (navigator.mozGetUserMedia) {
   }
 } else {
   console.log("Browser does not appear to be WebRTC-capable");
+}
+
+export default {
+  RTCPeerConnection,
+  getUserMedia,
+  attachMediaStream,
+  reattachMediaStream,
+  webrtcDetectedBrowser,
+  webrtcDetectedVersion,
+  createIceServer
 }

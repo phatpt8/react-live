@@ -3,7 +3,7 @@ var static = require('node-static');
 var http = require('http');
 var socketIO = require('socket.io');
 
-var fileServer = new(static.Server)();
+var fileServer = new static.Server();
 var app = http.createServer(function (req, res) {
   fileServer.serve(req, res);
 }).listen(2013);
